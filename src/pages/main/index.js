@@ -14,7 +14,7 @@ export default class Main extends Component {
   };
 
   buscarApontamentos = async () => {
-    const response = await api.get("/");
+    const response = await api.get("/apontamentos");
 
     this.setState({ apontamentos: response.data.docs })
   }
@@ -25,9 +25,13 @@ export default class Main extends Component {
       <div className="apontamento-list">
         {apontamentos.map(apontamento =>(
           <article key={apontamento._id}>
-            <strong>{apontamento.dia}</strong>
-            <p>Entrou: {apontamento.entrada.hora}:{apontamento.entrada.minuto}</p>
-            <p>Saiu: {apontamento.saida.hora}:{apontamento.saida.minuto}</p>
+            <h3>{apontamento.dia}</h3>
+            <div className="detalhe">
+              <div className="entrada">Entrou: {apontamento.entrada}</div>
+              <div className="saida">Saiu: {apontamento.saida}</div>
+              <div className="pausa">Pausa: {apontamento.totalPausas}</div>
+              <div className="total">Total: {apontamento.total}</div>
+            </div>
           </article>
         ))}
       </div>

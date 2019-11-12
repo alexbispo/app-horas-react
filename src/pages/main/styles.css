@@ -7,7 +7,26 @@
 .apontamento-list article {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
+  color: #888;
+}
+
+.apontamento-list article h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apontamento-list article .detalhe {
+  font-size: 16px;
+  margin-top: 5px;
+  line-height: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.apontamento-list article .detalhe div {
+  margin: 0 10px;
 }
